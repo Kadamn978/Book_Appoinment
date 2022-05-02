@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Project1.Models.Doctor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.D_FName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.D_LName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.D_ContactNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.D_EMail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.D_Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.D_Qualiifcation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.D_Specialization)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.D_Experience)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.D_Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Confirm_D_Password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.D_FName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.D_LName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.D_ContactNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.D_EMail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.D_Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.D_Qualiifcation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.D_Specialization)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.D_Experience)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.D_Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Confirm_D_Password)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.D_Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.D_Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.D_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
